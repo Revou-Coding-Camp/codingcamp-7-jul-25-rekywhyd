@@ -1,9 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
 body {
+    background-color: #333;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
     text-align: center;
 }
 
+header h1 {
+    font-size: 2rem;
+}
+
 main {
-    background-color: aqua;
-    width: 500px;
-    justify-self: center;
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 1rem auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+form input[type="text"],
+form input[type="date"] {
+    flex: 1 1 150px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #219150;
+}
+
+/* Action Section */
+main section:nth-of-type(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+select.todos {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main section:nth-of-type(1) button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+main section:nth-of-type(1) button:hover {
+    background-color: #c0392b;
+}
+
+/* Todo List Section */
+.todo-list header {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+#task-list > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ecf0f1;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+#task-list > div span {
+    flex: 1;
+    padding: 0 0.5rem;
+    word-break: break-word;
+}
+
+#task-list button {
+    margin-left: 0.3rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    main section:nth-of-type(1) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form button,
+    main section:nth-of-type(1) button {
+        width: 100%;
+    }
+
+    #task-list > div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #task-list > div span,
+    #task-list > div button {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
 }

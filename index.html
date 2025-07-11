@@ -8,47 +8,41 @@
     <!-- CSS External -->
      <link rel="stylesheet" href="css/style.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col items-center justify-evenly min-h-screen bg-gray-100">
+<body>
     <header>
-        <h1 class="text-3xl font-bold">Todo List</h1>
+        <h1>Todo List</h1>
     </header>
 
-    <main class="p-[16px] rounded">
+    <main>
         <!-- Todo Input -->
-         <form class="flex justify-between p-[8px]">
-            <div class="flex gap-[8px]">
-                <input type="text" id="task-input" class="border rounded p-[4px] bg-gray-100" placeholder="Add a new task">
-                <input type="date" id="due-date-input" class="border rounded p-[4px] bg-gray-100" placeholder="Due date">
-            </div>
-            
-            <button type="button" class="bg-blue-500 text-white p-[4px] rounded w-[50px]" onclick="addTask();">+</button>
-         </form>
+        <form>
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <input type="date" id="due-date-input" placeholder="Due date">
+            <button type="button" onclick="addTask();">+</button>
+        </form>
 
-         <!-- Todo Action -->
-          <section class="flex justify-between p-[8px]">
-            <div class="flex gap-[8px]">
-                <button class="bg-gray-200 p-[4px] rounded">Show Complated</button>
-                <button class="bg-green-200 p-[4px] rounded">Show All</button>
-            </div>
-            
-            <button class="bg-red-500 text-white p-[4px] rounded" onclick="deleteAllTasks();">Delete All</button>
+        <!-- Todo Action -->
+        <section>
+            <select class="todos">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+            <button onclick="deleteAllTasks();">Delete All</button>
+        </section>
 
-          </section>
-
-          <!-- Todo List -->
-           <section>
+        <!-- Todo List -->
+        <section class="todo-list">
             <header>
-                <h2 class="text-xl font-bold">Task</h2>
+                <h2>Task</h2>
             </header>
 
             <!-- Task List -->
             <div id="task-list">
-                  <p>Task is Empty!</p>  
+                <p>Task is Empty!</p>  
             </div>
-           </section>
+        </section>
     </main>
 
     <footer>
