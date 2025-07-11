@@ -1,3 +1,9 @@
 body {
+    text-align: center;
+}
+
+main {
     background-color: aqua;
+    width: 500px;
+    justify-self: center;
 }

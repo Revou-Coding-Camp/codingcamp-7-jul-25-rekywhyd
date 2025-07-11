@@ -7,14 +7,55 @@
 
     <!-- CSS External -->
      <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="flex flex-col items-center justify-evenly min-h-screen bg-gray-100">
     <header>
-        <h1>Todo List</h1>
+        <h1 class="text-3xl font-bold">Todo List</h1>
     </header>
 
-    <main>© 2025 Reki Wahyudi. All Rights Reserved.</main>
+    <main class="p-[16px] rounded">
+        <!-- Todo Input -->
+         <form class="flex justify-between p-[8px]">
+            <div class="flex gap-[8px]">
+                <input type="text" id="task-input" class="border rounded p-[4px] bg-gray-100" placeholder="Add a new task">
+                <input type="date" id="due-date-input" class="border rounded p-[4px] bg-gray-100" placeholder="Due date">
+            </div>
+            
+            <button type="button" class="bg-blue-500 text-white p-[4px] rounded w-[50px]" onclick="addTask();">+</button>
+         </form>
 
-    <footer></footer>
+         <!-- Todo Action -->
+          <section class="flex justify-between p-[8px]">
+            <div class="flex gap-[8px]">
+                <button class="bg-gray-200 p-[4px] rounded">Show Complated</button>
+                <button class="bg-green-200 p-[4px] rounded">Show All</button>
+            </div>
+            
+            <button class="bg-red-500 text-white p-[4px] rounded" onclick="deleteAllTasks();">Delete All</button>
+
+          </section>
+
+          <!-- Todo List -->
+           <section>
+            <header>
+                <h2 class="text-xl font-bold">Task</h2>
+            </header>
+
+            <!-- Task List -->
+            <div id="task-list">
+                  <p>Task is Empty!</p>  
+            </div>
+           </section>
+    </main>
+
+    <footer>
+        <span>© 2025 Reki Wahyudi. All Rights Reserved.</span>
+    </footer>
+
+    <!-- Javascript External     -->
+    <script src="js/script.js"></script>
 </body>
 </html>
