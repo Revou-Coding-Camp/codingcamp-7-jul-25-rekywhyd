@@ -25,11 +25,8 @@ function addTask() {
         taskInput.value = '';
         dueDateInput.value = '';
 
-        // Log the new task (for demonstration purposes)
-        console.log('New task added:', newTask);
         displayTasks();
     }
-    console.log('Adding task:', taskInput.value, 'Due date:', dueDateInput.value);
 }
 
 // function to display task
@@ -62,8 +59,6 @@ function deleteTask(id) {
 function deleteAllTasks() {
     tasks = []; // Clear the tasks array
     displayTasks();
-    console.log('All tasks deleted');
-    
 }
 
 function toggleTaskCompletion(id) {
@@ -72,8 +67,6 @@ function toggleTaskCompletion(id) {
     if (task) {
         // Toggle the completion status
         task.complated = !task.complated;
-        console.log('Toggling completion for task with ID:', id, 'New status:', task.complated);
-        
         displayTasks(); // Refresh the displayed task list
     }
 }
